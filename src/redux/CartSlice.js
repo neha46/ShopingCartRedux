@@ -16,7 +16,7 @@ const CartSlice=createSlice({
         },
         // for remove cart
         remove(state,action){
-            state= state.filter(item=>item.id !== action.payload)
+            return state.filter(item=>item.id !== action.payload)
         }
     }
 });

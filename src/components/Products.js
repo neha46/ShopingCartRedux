@@ -10,12 +10,12 @@ const Products = () => {
       // api fetch
 
       const fetchProducts = async () => {
-            const res = await fetch('https://fakestoreapi.com/products');
-            const data = await res.json();
-            console.log(data);
+        const res = await fetch('https://fakestoreapi.com/products');
+        const data = await res.json();
+        console.log(data);
 
-            // set data
-            setProducts(data);
+        // set data
+        setProducts(data);
         };
         fetchProducts();
     },[])
