@@ -7,7 +7,7 @@ import { fetchProducts } from '../redux/ProductSlice.js';
 import { STATUSES } from '../redux/ProductSlice.js';
 const Products = () => {
  const dispatch =useDispatch();
- const {data,status}=useSelector((state)=>state.product)
+ const {data:product,status}=useSelector((state)=>state.product)
     // const [products,setProducts]=useState([]);
     useEffect(()=>{
       // api fetch
@@ -31,17 +31,17 @@ const Products = () => {
     if(status===STATUSES.ERROR){
       return <h2>Something went wrong!..</h2>
     }
-console.log("products are",data)
+console.log("products are",product)
 
 // dispatch action---
-const handleAdd=(product)=>{
+const handleAdd=(p)=>{
 dispatch(add(product))
 };
    
   return (
     <div className="productsWrapper">
       {
-        data.map(prod=>(
+        product.map(prod=>(
           <div className='card' key={prod.id}>
             
               <img src={prod.image} alt="" />
